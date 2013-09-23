@@ -1,0 +1,30 @@
+---
+abstract: 'Convert Twitter search page to RSS'
+author:
+  - 'Steven Haryanto <stevenharyanto@gmail.com>'
+build_requires:
+  IO::Handle: 0
+  IPC::Open3: 0
+  Test::More: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.30
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.300038, CPAN::Meta::Converter version 2.132510'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: RSS-From-Twitter-Search
+requires:
+  HTML::Entities: 0
+  LWP::UserAgent: 0
+  Log::Any: 0
+  Mojo::DOM: 0
+  Perinci::CmdLine: 0
+  Perinci::Sub::Util: 0
+  URI::Escape: 0
+  perl: 5.010001
+resources:
+  homepage: http://metacpan.org/release/RSS-From-Twitter-Search
+  repository: http://github.com/sharyanto/perl-RSS-From-Twitter-Search
+version: 0.01

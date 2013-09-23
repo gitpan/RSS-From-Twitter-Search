@@ -1,0 +1,55 @@
+NAME
+    RSS::From::Twitter::Search - Convert Twitter search page to RSS
+
+VERSION
+    version 0.01
+
+SYNOPSIS
+     # See get-rss-from-twitter-search for command-line usage
+
+AUTHOR
+    Steven Haryanto <stevenharyanto@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2013 by Steven Haryanto.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
+DESCRIPTION
+FUNCTIONS
+    None are exported by default, but they are exportable.
+
+  get_rss_from_twitter_search(%args) -> [status, msg, result, meta]
+    In June 2013, Twitter retired the RSS v1 API (e.g.
+    http://search.twitter.com/search.rss?q=blah). However, its replacement,
+    the v1.1 API, is not as straightforward to use (e.g. needs auth). This
+    function scrapes the Twitter search result page (e.g.
+    https://twitter.com/search?q=blah) and converts it to RSS. I wrote this
+    because I have other scripts expecting RSS input.
+
+    Expect breakage from time to time though, as scraping method is rather
+    fragile.
+
+    Arguments ('*' denotes required arguments):
+
+    *   query* => *str*
+
+        Search query.
+
+    *   ua => *obj*
+
+        Supply a custom LWP::UserAgent object.
+
+        If supplied, will be used instead of the default LWP::UserAgent
+        object.
+
+    Return value:
+
+    Returns an enveloped result (an array). First element (status) is an
+    integer containing HTTP status code (200 means OK, 4xx caller error, 5xx
+    function error). Second element (msg) is a string containing error
+    message, or 'OK' if status is 200. Third element (result) is optional,
+    the actual result. Fourth element (meta) is called result metadata and
+    is optional, a hash that contains extra information.
+

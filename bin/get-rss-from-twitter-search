@@ -1,0 +1,78 @@
+#!/usr/bin/perl
+
+our $VERSION = '0.01'; # VERSION
+
+use 5.010;
+use strict;
+use warnings;
+
+use Perinci::CmdLine;
+Perinci::CmdLine->new(
+    url => '/RSS/From/Twitter/Search/get_rss_from_twitter_search')->run;
+
+1;
+#ABSTRACT: Generate RSS from Twitter search result page
+#PODNAME: get-rss-from-twitter-search
+
+__END__
+
+=pod
+
+=encoding utf-8
+
+=head1 NAME
+
+get-rss-from-twitter-search - Generate RSS from Twitter search result page
+
+=head1 VERSION
+
+version 0.01
+
+=head1 SYNOPSIS
+
+ $ get-rss-from-twitter-search '#perl'
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!-- generator="RSS::From::Twitter::Search 0.01 (Perl module)" -->
+ <rss version="2.0">
+   <channel>
+     <title>Twitter Search: #perl</title>
+     <link>https://twitter.com/search?%23perl</link>
+     <generator>...</generator>
+
+     <title>Mukesh Sharma (@iHackers)</title>
+     <link>https://twitter.com/iHackers/status/382113008454885376</link>
+     <pubDate>Mon, 23 Sep 2013 12:03:35 +0700</pubDate>
+     <description>Apress - Beginning Web Development - From Novice To Professional (2006)</description>
+     </item>
+
+     <item>
+     <title>Ali-Reza Anghaie (@Packetknife)</title>
+     <link>https://twitter.com/Packetknife/status/382053623490174976</link>
+     <pubDate>Mon, 23 Sep 2013 08:07:36 +0700</pubDate>
+     <description>Weekly Issue #113 - September 23, 2013 - Object Oriented Perl via</description>
+     </item>
+
+     ...
+
+   </channel>
+ </rss>
+
+=head1 DESCRIPTION
+
+See L<RSS::From::Forum::vBulletin> for more details, including available
+options.
+
+=head1 SEE ALSO
+
+=head1 AUTHOR
+
+Steven Haryanto <stevenharyanto@gmail.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Steven Haryanto.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
